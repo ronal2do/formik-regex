@@ -55,17 +55,17 @@ const UserForm = props => {
       <div className="form-group">
         <label>Imaginary Username</label>
         <input
-          name="username"
+          name="name"
           type="text"
-          className={`form-control ${errors.username &&
-            touched.username &&
+          className={`form-control ${errors.name &&
+            touched.name &&
             "is-invalid"}`}
-          value={values.username}
+          value={values.name}
           onChange={handleChange}
           onBlur={handleBlur}
         />
-        {errors.username && touched.username && (
-          <div className="invalid-feedback">{errors.username}</div>
+        {errors.name && touched.name && (
+          <div className="invalid-feedback">{errors.name}</div>
         )}
       </div>
       <div className="form-group">
@@ -115,7 +115,7 @@ export const validationSchema = Yup.object().shape({
 export default Formik({
   mapPropsToValues: props => ({
     email: props.user.email,
-    username: props.user.username,
+    name: props.user.name,
     imaginaryThingId: props.user.imaginaryThingId
   }),
 
